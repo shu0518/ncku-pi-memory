@@ -1,0 +1,11 @@
+{
+  "_comment": "對應 patloeber.com/gemma-4-pi-agent。複製到 ~/.pi/agent/models.json，把 id 改成你 LM Studio / Ollama 顯示的實際名稱。",
+  "providers": {
+    "lmstudio": {
+      "baseUrl": "http://localhost:1234/v1",
+      "api": "openai-completions",
+      "apiKey": "lm-studio",
+      "models": [ { "id": "google/gemma-4-26b-a4b", "input": ["text"] } ]
+    }
+  }
+}

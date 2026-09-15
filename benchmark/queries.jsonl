@@ -1,0 +1,21 @@
+{"query": "how do I run the tests?", "relevant_ids": ["o02"]}
+{"query": "what package manager should I use, npm or pnpm?", "relevant_ids": ["o01"]}
+{"query": "which database are we using and why?", "relevant_ids": ["o05", "o15"]}
+{"query": "how should commit messages be formatted?", "relevant_ids": ["o06"]}
+{"query": "what python version is required?", "relevant_ids": ["o12"]}
+{"query": "how do I deploy to production?", "relevant_ids": ["o10", "o22"]}
+{"query": "what embedding model do we use for chinese text?", "relevant_ids": ["o19"]}
+{"query": "how is API authentication handled?", "relevant_ids": ["o13"]}
+{"query": "文件要用什麼語言撰寫？", "relevant_ids": ["o21"]}
+{"query": "資料庫 schema 要怎麼修改？", "relevant_ids": ["o23"]}
+{"query": "what is the chunking strategy for RAG?", "relevant_ids": ["o18"]}
+{"query": "where are secrets and API keys stored?", "relevant_ids": ["o09"]}
+{"query": "who is in charge of the design system?", "relevant_ids": ["o14"]}
+{"query": "what does the frontend use for state management?", "relevant_ids": ["o16"]}
+{"query": "what cloud host do we ship the app to?", "relevant_ids": ["o10"]}
+{"query": "what's the cap on how many calls I can make per key?", "relevant_ids": ["o20"]}
+{"query": "how big can an uploaded picture be?", "relevant_ids": ["o26"]}
+{"query": "how long until a login credential stops working?", "relevant_ids": ["o13"]}
+{"query": "when is the team sync meeting each week?", "relevant_ids": ["o24"]}
+{"query": "我要怎麼把新功能慢慢開放給部分使用者？", "relevant_ids": ["o27"]}
+{"query": "怎麼確認我的程式碼風格符合規範？", "relevant_ids": ["o07"]}

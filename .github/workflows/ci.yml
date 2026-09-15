@@ -1,0 +1,36 @@
+name: HW4 CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  repository_dispatch:
+
+permissions:
+  checks: write
+  actions: read
+  contents: read
+
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    # Skip the run triggered by github-classroom[bot] to avoid duplicate grading.
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: File structure check
+        id: file-structure-check
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: File structure check
+          command: bash .github/scripts/check_structure.sh
+          timeout: 1
+          max-score: 10
+
+      - name: Autograding Reporter
+        uses: classroom-resources/autograding-grading-reporter@v1
+        env:
+          FILE-STRUCTURE-CHECK_RESULTS: "${{ steps.file-structure-check.outputs.result }}"
+        with:
+          runners: file-structure-check

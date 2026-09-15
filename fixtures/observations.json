@@ -1,0 +1,5 @@
+[
+  {"id": "d1", "sessionId": "s1", "timestamp": 1, "toolName": "remember", "summary": "this project uses pnpm test", "tags": ["build"]},
+  {"id": "d2", "sessionId": "s1", "timestamp": 2, "toolName": "remember", "summary": "the project readme is in docs", "tags": ["docs"]},
+  {"id": "d3", "sessionId": "s2", "timestamp": 3, "toolName": "remember", "summary": "run pnpm test before commit", "tags": ["build"]}
+]

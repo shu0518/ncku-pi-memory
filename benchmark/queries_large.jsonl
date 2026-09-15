@@ -1,0 +1,40 @@
+{"query": "what package manager should I use?", "relevant_ids": ["L001"]}
+{"query": "how do I run the unit tests?", "relevant_ids": ["L002"]}
+{"query": "how do I run end to end tests?", "relevant_ids": ["L003"]}
+{"query": "what python version is required for the backend?", "relevant_ids": ["L005"]}
+{"query": "what node version do we use?", "relevant_ids": ["L006"]}
+{"query": "what does the frontend use for state management?", "relevant_ids": ["L008"]}
+{"query": "how is styling done on the frontend?", "relevant_ids": ["L009"]}
+{"query": "what web framework is the backend API written in?", "relevant_ids": ["L012"]}
+{"query": "which database do we use as the primary store?", "relevant_ids": ["L015"]}
+{"query": "how are embeddings stored in postgres?", "relevant_ids": ["L016"]}
+{"query": "why did we pick chromadb instead of faiss?", "relevant_ids": ["L018"]}
+{"query": "how should database schema changes be made?", "relevant_ids": ["L019"]}
+{"query": "how should commit messages be formatted?", "relevant_ids": ["L023"]}
+{"query": "what is the merge policy for pull requests?", "relevant_ids": ["L024", "L025"]}
+{"query": "how is python code style enforced?", "relevant_ids": ["L027"]}
+{"query": "how is type checking handled?", "relevant_ids": ["L029"]}
+{"query": "where are secrets kept during development?", "relevant_ids": ["L033"]}
+{"query": "how is API authentication handled?", "relevant_ids": ["L035"]}
+{"query": "what roles exist in the access control system?", "relevant_ids": ["L037"]}
+{"query": "what is the rate limit per API key?", "relevant_ids": ["L039"]}
+{"query": "how do we deploy to production?", "relevant_ids": ["L041"]}
+{"query": "how do we roll out new features gradually?", "relevant_ids": ["L044", "L090"]}
+{"query": "how are rollbacks performed?", "relevant_ids": ["L046"]}
+{"query": "what is the chunking strategy for RAG?", "relevant_ids": ["L054"]}
+{"query": "which embedding model supports chinese text?", "relevant_ids": ["L055"]}
+{"query": "what do we use to call different LLM providers?", "relevant_ids": ["L058"]}
+{"query": "who should I ask before changing the UI component library?", "relevant_ids": ["L060"]}
+{"query": "where are architecture decisions documented?", "relevant_ids": ["L064", "L087"]}
+{"query": "what tool do we use for error tracking?", "relevant_ids": ["L068", "L095"]}
+{"query": "how are metrics monitored?", "relevant_ids": ["L069"]}
+{"query": "how big can an uploaded picture be?", "relevant_ids": ["L048", "L089"]}
+{"query": "what payment provider do we use?", "relevant_ids": ["L077"]}
+{"query": "how is full text search implemented?", "relevant_ids": ["L079", "L100"]}
+{"query": "文件要用什麼語言撰寫？", "relevant_ids": ["L081"]}
+{"query": "資料庫 schema 要怎麼修改？", "relevant_ids": ["L083"]}
+{"query": "正式環境的密碼和金鑰放在哪裡？", "relevant_ids": ["L085", "L034"]}
+{"query": "團隊週會是什麼時候？", "relevant_ids": ["L084"]}
+{"query": "怎麼確認我的程式碼風格符合規範？", "relevant_ids": ["L091", "L027"]}
+{"query": "登入的 token 多久會過期？", "relevant_ids": ["L097", "L035"]}
+{"query": "我要怎麼把新功能慢慢開放給部分使用者？", "relevant_ids": ["L090", "L044"]}

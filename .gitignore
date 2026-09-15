@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.env
+.venv/
+node_modules/
+# 執行時產生的記憶檔，不要 commit
+.pi-memory.json
+memory.json

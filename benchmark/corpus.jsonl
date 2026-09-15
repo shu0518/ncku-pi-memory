@@ -1,0 +1,30 @@
+{"id": "o01", "summary": "This project uses pnpm, not npm. Install dependencies with `pnpm install`.", "tags": ["build"]}
+{"id": "o02", "summary": "Run the test suite with `pnpm test`. CI runs it on every push.", "tags": ["build", "ci"]}
+{"id": "o03", "summary": "The frontend is built with React and Vite.", "tags": ["arch", "frontend"]}
+{"id": "o04", "summary": "The backend API is FastAPI, served by uvicorn on port 8000.", "tags": ["arch", "backend"]}
+{"id": "o05", "summary": "Database is PostgreSQL; we use pgvector for storing embeddings.", "tags": ["arch", "db"]}
+{"id": "o06", "summary": "Commit messages must follow Conventional Commits (feat:, fix:, chore:).", "tags": ["convention", "git"]}
+{"id": "o07", "summary": "Code style is enforced by ruff and black; run `make lint` before pushing.", "tags": ["convention", "build"]}
+{"id": "o08", "summary": "The main branch is protected; open a PR and get one approval to merge.", "tags": ["convention", "git"]}
+{"id": "o09", "summary": "Secrets live in a .env file which is gitignored; never commit real API keys.", "tags": ["security"]}
+{"id": "o10", "summary": "We deploy to production on Fly.io using `fly deploy`. Staging is a separate app.", "tags": ["deploy"]}
+{"id": "o11", "summary": "The vector index is rebuilt nightly by a cron job in scripts/reindex.py.", "tags": ["backend", "db"]}
+{"id": "o12", "summary": "Use Python 3.11; the repo fails on 3.9 due to new type-hint syntax.", "tags": ["build"]}
+{"id": "o13", "summary": "API authentication uses JWT bearer tokens with a 24 hour expiry.", "tags": ["backend", "security"]}
+{"id": "o14", "summary": "The design lead is Mei; ping her before changing the component library.", "tags": ["people"]}
+{"id": "o15", "summary": "We chose ChromaDB over FAISS for easier local development and metadata filters.", "tags": ["decision", "db"]}
+{"id": "o16", "summary": "Frontend state is managed with Zustand, not Redux.", "tags": ["frontend", "decision"]}
+{"id": "o17", "summary": "All timestamps are stored in UTC; convert to local time only in the UI layer.", "tags": ["convention", "backend"]}
+{"id": "o18", "summary": "The RAG chunking strategy is 512 tokens per chunk with 64 token overlap.", "tags": ["rag"]}
+{"id": "o19", "summary": "Embeddings use the multilingual MiniLM model to support Chinese and English data.", "tags": ["rag", "decision"]}
+{"id": "o20", "summary": "Rate limiting is 100 requests per minute per API key.", "tags": ["backend"]}
+{"id": "o21", "summary": "我們的文件一律用繁體中文撰寫，程式碼註解可以用英文。", "tags": ["convention"]}
+{"id": "o22", "summary": "部署前必須先在 staging 環境跑過 smoke test 才能上線。", "tags": ["deploy", "convention"]}
+{"id": "o23", "summary": "資料庫 migration 一律用 alembic 管理，不要手動修改 schema。", "tags": ["db", "convention"]}
+{"id": "o24", "summary": "週會固定在每週二早上十點，開會前要更新 PROGRESS.md。", "tags": ["people", "process"]}
+{"id": "o25", "summary": "Logging uses a structured JSON format; use the `log` helper instead of print.", "tags": ["convention", "backend"]}
+{"id": "o26", "summary": "Image uploads go to S3; maximum size is 10MB, validated on the server side.", "tags": ["backend"]}
+{"id": "o27", "summary": "We use feature flags via LaunchDarkly for gradual rollouts.", "tags": ["deploy", "decision"]}
+{"id": "o28", "summary": "The mobile app is React Native and shares the API client package with the web app.", "tags": ["arch", "frontend"]}
+{"id": "o29", "summary": "Performance budget: API p95 latency must stay under 300ms.", "tags": ["backend", "perf"]}
+{"id": "o30", "summary": "Onboarding docs are in docs/onboarding.md; update them when user flows change.", "tags": ["process"]}

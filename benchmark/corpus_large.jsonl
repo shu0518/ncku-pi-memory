@@ -1,0 +1,100 @@
+{"id": "L001", "summary": "This project uses pnpm, not npm. Install dependencies with `pnpm install`.", "tags": ["build"]}
+{"id": "L002", "summary": "Run the unit test suite with `pnpm test`; CI runs it on every push.", "tags": ["build", "ci"]}
+{"id": "L003", "summary": "Run end-to-end tests with `pnpm test:e2e`, which spins up Playwright.", "tags": ["build", "ci"]}
+{"id": "L004", "summary": "Integration tests live under tests/integration and need a running database.", "tags": ["build", "ci"]}
+{"id": "L005", "summary": "Use Python 3.11 for the backend; the repo fails on 3.9 due to new type-hint syntax.", "tags": ["build"]}
+{"id": "L006", "summary": "Node.js version is pinned to 20 LTS via the .nvmrc file.", "tags": ["build"]}
+{"id": "L007", "summary": "The frontend is built with React and Vite.", "tags": ["arch", "frontend"]}
+{"id": "L008", "summary": "Frontend state is managed with Zustand, not Redux.", "tags": ["frontend", "decision"]}
+{"id": "L009", "summary": "Styling uses Tailwind CSS; avoid inline styles except for dynamic values.", "tags": ["frontend", "convention"]}
+{"id": "L010", "summary": "The component library is internal, named Aurora; do not add new external UI deps.", "tags": ["frontend", "convention"]}
+{"id": "L011", "summary": "The mobile app is React Native and shares the API client package with the web app.", "tags": ["arch", "frontend", "mobile"]}
+{"id": "L012", "summary": "The backend API is FastAPI, served by uvicorn on port 8000.", "tags": ["arch", "backend"]}
+{"id": "L013", "summary": "A separate worker service runs background jobs using Celery and Redis.", "tags": ["arch", "backend"]}
+{"id": "L014", "summary": "Inter-service messages go through a RabbitMQ queue, not direct HTTP calls.", "tags": ["arch", "backend"]}
+{"id": "L015", "summary": "The primary database is PostgreSQL 16.", "tags": ["arch", "db"]}
+{"id": "L016", "summary": "We use the pgvector extension on Postgres for storing embeddings.", "tags": ["arch", "db", "rag"]}
+{"id": "L017", "summary": "Redis is used both as a cache and as the Celery broker.", "tags": ["arch", "backend", "db"]}
+{"id": "L018", "summary": "We chose ChromaDB over FAISS for local prototyping because of easier metadata filters.", "tags": ["decision", "db", "rag"]}
+{"id": "L019", "summary": "Database migrations are managed with Alembic; never edit the schema by hand.", "tags": ["db", "convention"]}
+{"id": "L020", "summary": "The vector index is rebuilt nightly by a cron job in scripts/reindex.py.", "tags": ["backend", "db", "rag"]}
+{"id": "L021", "summary": "Read replicas handle analytics queries; never run heavy reports on the primary DB.", "tags": ["db", "perf"]}
+{"id": "L022", "summary": "Connection pooling uses PgBouncer in transaction mode.", "tags": ["db", "backend"]}
+{"id": "L023", "summary": "Commit messages must follow Conventional Commits (feat:, fix:, chore:).", "tags": ["convention", "git"]}
+{"id": "L024", "summary": "The main branch is protected; open a PR and get at least one approval to merge.", "tags": ["convention", "git"]}
+{"id": "L025", "summary": "We squash-merge PRs so the main history stays linear.", "tags": ["convention", "git"]}
+{"id": "L026", "summary": "Release tags follow semantic versioning, e.g. v2.4.1.", "tags": ["convention", "git", "deploy"]}
+{"id": "L027", "summary": "Code style is enforced by ruff and black; run `make lint` before pushing.", "tags": ["convention", "build"]}
+{"id": "L028", "summary": "TypeScript code is linted with ESLint and formatted by Prettier.", "tags": ["convention", "frontend", "build"]}
+{"id": "L029", "summary": "Type checking is mandatory: mypy for Python, tsc --noEmit for the frontend.", "tags": ["convention", "build"]}
+{"id": "L030", "summary": "All timestamps are stored in UTC; convert to local time only in the UI layer.", "tags": ["convention", "backend"]}
+{"id": "L031", "summary": "Logging uses a structured JSON format; use the `log` helper instead of print.", "tags": ["convention", "backend"]}
+{"id": "L032", "summary": "Feature work happens on short-lived branches named feature/<ticket-id>.", "tags": ["convention", "git", "process"]}
+{"id": "L033", "summary": "Secrets live in a .env file which is gitignored; never commit real API keys.", "tags": ["security"]}
+{"id": "L034", "summary": "Production secrets are stored in HashiCorp Vault, not in environment files.", "tags": ["security", "deploy"]}
+{"id": "L035", "summary": "API authentication uses JWT bearer tokens with a 24 hour expiry.", "tags": ["backend", "security"]}
+{"id": "L036", "summary": "Refresh tokens are rotated on every use and stored hashed in the database.", "tags": ["backend", "security"]}
+{"id": "L037", "summary": "Role-based access control has three roles: viewer, editor, and admin.", "tags": ["backend", "security"]}
+{"id": "L038", "summary": "All external inputs are validated with Pydantic models on the server side.", "tags": ["backend", "security"]}
+{"id": "L039", "summary": "Rate limiting is 100 requests per minute per API key.", "tags": ["backend", "security"]}
+{"id": "L040", "summary": "CORS allows only the official web and mobile origins; wildcard origins are forbidden.", "tags": ["backend", "security"]}
+{"id": "L041", "summary": "We deploy to production on Fly.io using `fly deploy`.", "tags": ["deploy"]}
+{"id": "L042", "summary": "Staging is a separate Fly.io app with its own database.", "tags": ["deploy"]}
+{"id": "L043", "summary": "CI/CD runs on GitHub Actions; the deploy workflow triggers on tags only.", "tags": ["deploy", "ci"]}
+{"id": "L044", "summary": "We use feature flags via LaunchDarkly for gradual rollouts.", "tags": ["deploy", "decision"]}
+{"id": "L045", "summary": "Blue-green deployment is used for the API to avoid downtime.", "tags": ["deploy"]}
+{"id": "L046", "summary": "Rollbacks are done by re-deploying the previous release tag.", "tags": ["deploy"]}
+{"id": "L047", "summary": "Container images are built with Docker and pushed to GitHub Container Registry.", "tags": ["deploy", "build"]}
+{"id": "L048", "summary": "Image uploads go to S3; maximum size is 10MB, validated on the server side.", "tags": ["backend", "storage"]}
+{"id": "L049", "summary": "Generated thumbnails are cached on a CDN with a 30 day TTL.", "tags": ["backend", "perf"]}
+{"id": "L050", "summary": "Large file exports are streamed, never loaded fully into memory.", "tags": ["backend", "perf"]}
+{"id": "L051", "summary": "Performance budget: API p95 latency must stay under 300ms.", "tags": ["backend", "perf"]}
+{"id": "L052", "summary": "Frontend bundle size must stay under 250KB gzipped for the initial load.", "tags": ["frontend", "perf"]}
+{"id": "L053", "summary": "We measure Core Web Vitals; LCP target is under 2.5 seconds.", "tags": ["frontend", "perf"]}
+{"id": "L054", "summary": "The RAG chunking strategy is 512 tokens per chunk with 64 token overlap.", "tags": ["rag"]}
+{"id": "L055", "summary": "Embeddings use the multilingual MiniLM model to support Chinese and English data.", "tags": ["rag", "decision"]}
+{"id": "L056", "summary": "Retrieval uses top-k of 5 by default, tunable per query.", "tags": ["rag"]}
+{"id": "L057", "summary": "We rerank retrieved chunks with a cross-encoder before sending to the LLM.", "tags": ["rag", "decision"]}
+{"id": "L058", "summary": "The LLM gateway is LiteLLM, which lets us swap providers without code changes.", "tags": ["rag", "backend", "decision"]}
+{"id": "L059", "summary": "Prompts are stored as versioned templates in the prompts/ directory.", "tags": ["rag", "convention"]}
+{"id": "L060", "summary": "The design lead is Mei; ping her before changing the component library.", "tags": ["people"]}
+{"id": "L061", "summary": "The backend on-call rotation is weekly; the schedule is in PagerDuty.", "tags": ["people", "process"]}
+{"id": "L062", "summary": "Code owners for the payments module are Jorge and Aisha.", "tags": ["people", "process"]}
+{"id": "L063", "summary": "New hires should read docs/onboarding.md in their first week.", "tags": ["people", "process", "docs"]}
+{"id": "L064", "summary": "Architecture decisions are recorded as ADRs under docs/adr/.", "tags": ["process", "docs"]}
+{"id": "L065", "summary": "Onboarding docs are in docs/onboarding.md; update them when user flows change.", "tags": ["process", "docs"]}
+{"id": "L066", "summary": "API reference docs are auto-generated from OpenAPI and published to the docs site.", "tags": ["docs", "backend"]}
+{"id": "L067", "summary": "Incident postmortems are blameless and stored in docs/postmortems/.", "tags": ["process", "docs"]}
+{"id": "L068", "summary": "Error tracking uses Sentry; every release is tagged so errors map to a version.", "tags": ["backend", "observability"]}
+{"id": "L069", "summary": "Metrics are exported to Prometheus and visualized in Grafana dashboards.", "tags": ["backend", "observability"]}
+{"id": "L070", "summary": "Distributed traces use OpenTelemetry with the collector running as a sidecar.", "tags": ["backend", "observability"]}
+{"id": "L071", "summary": "Health checks live at /healthz and are polled by the load balancer every 10 seconds.", "tags": ["backend", "deploy"]}
+{"id": "L072", "summary": "Database backups run every 6 hours and are retained for 30 days.", "tags": ["db", "ops"]}
+{"id": "L073", "summary": "We test backup restores quarterly in the staging environment.", "tags": ["db", "ops", "process"]}
+{"id": "L074", "summary": "Cron jobs are defined in infra/cron.yaml, not scattered across services.", "tags": ["backend", "ops"]}
+{"id": "L075", "summary": "Infrastructure is provisioned with Terraform; manual console changes are forbidden.", "tags": ["ops", "convention"]}
+{"id": "L076", "summary": "Email is sent through Postmark; templates are managed in their dashboard.", "tags": ["backend", "integration"]}
+{"id": "L077", "summary": "Payments are processed by Stripe; webhook signatures must be verified.", "tags": ["backend", "integration", "security"]}
+{"id": "L078", "summary": "Push notifications go through Firebase Cloud Messaging.", "tags": ["mobile", "integration"]}
+{"id": "L079", "summary": "Search is powered by a managed Elasticsearch cluster, separate from Postgres.", "tags": ["backend", "search"]}
+{"id": "L080", "summary": "Analytics events are sent to a separate pipeline and never block the request path.", "tags": ["backend", "perf", "observability"]}
+{"id": "L081", "summary": "我們的文件一律用繁體中文撰寫，程式碼註解可以用英文。", "tags": ["convention", "docs"]}
+{"id": "L082", "summary": "部署前必須先在 staging 環境跑過 smoke test 才能上線。", "tags": ["deploy", "convention"]}
+{"id": "L083", "summary": "資料庫 migration 一律用 alembic 管理，不要手動修改 schema。", "tags": ["db", "convention"]}
+{"id": "L084", "summary": "週會固定在每週二早上十點，開會前要更新 PROGRESS.md。", "tags": ["people", "process"]}
+{"id": "L085", "summary": "正式環境的金鑰存放在 Vault，嚴禁寫死在程式碼或設定檔裡。", "tags": ["security", "deploy"]}
+{"id": "L086", "summary": "前端送 API 之前要先做表單驗證，後端仍會再驗一次，不可只信任前端。", "tags": ["frontend", "backend", "security"]}
+{"id": "L087", "summary": "重大架構決策都要寫成 ADR 文件，存在 docs/adr 目錄下供日後查閱。", "tags": ["process", "docs"]}
+{"id": "L088", "summary": "客服回報的問題統一開 issue 並標上 priority 標籤，由值班工程師分流。", "tags": ["process", "people"]}
+{"id": "L089", "summary": "圖片上傳大小上限是 10MB，超過要在前端先壓縮再送出。", "tags": ["frontend", "storage"]}
+{"id": "L090", "summary": "新功能預設關閉，透過 feature flag 逐步開放給少數使用者測試。", "tags": ["deploy", "decision"]}
+{"id": "L091", "summary": "程式碼風格交給 ruff 與 black 自動處理，送 PR 前請先跑過 make lint。", "tags": ["convention", "build"]}
+{"id": "L092", "summary": "所有時間一律以 UTC 儲存，只有在畫面顯示時才轉成使用者當地時區。", "tags": ["convention", "backend"]}
+{"id": "L093", "summary": "API 回應時間 p95 必須低於 300 毫秒，超標要進效能調校流程。", "tags": ["backend", "perf"]}
+{"id": "L094", "summary": "資料庫每六小時自動備份一次，備份保留三十天。", "tags": ["db", "ops"]}
+{"id": "L095", "summary": "錯誤監控用 Sentry，每次發版都打 tag，方便把錯誤對應到版本。", "tags": ["backend", "observability"]}
+{"id": "L096", "summary": "正式機部署採用藍綠部署，確保切換時不中斷服務。", "tags": ["deploy"]}
+{"id": "L097", "summary": "登入採用 JWT，token 有效期 24 小時，過期需用 refresh token 換新。", "tags": ["backend", "security"]}
+{"id": "L098", "summary": "主分支受保護，必須開 PR 並至少一人核可才能合併。", "tags": ["convention", "git"]}
+{"id": "L099", "summary": "後端值班輪值以週為單位，輪值表放在 PagerDuty 上。", "tags": ["people", "process"]}
+{"id": "L100", "summary": "搜尋功能由獨立的 Elasticsearch 叢集提供，不要直接用資料庫做全文搜尋。", "tags": ["backend", "search"]}

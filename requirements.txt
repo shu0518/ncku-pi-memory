@@ -1,0 +1,10 @@
+# Python >= 3.10 required (developed with 3.14.3)
+# 核心（capture/store/retrieve/bm25）只用標準函式庫，無需任何套件。
+# 測試：
+pytest>=8.0
+
+# 任務二（選做）若做 hybrid retrieval，可用本地 embedding（與 HW3 相同）：
+# 任務二（hybrid retrieval）：本地 embedding（與 HW3 相同），不呼叫雲端推論 API。
+# 預設模型為多語言的 paraphrase-multilingual-MiniLM-L12-v2（跨語言題友善）；
+# 首次執行會從 Hugging Face 下載並快取到 ~/.cache/huggingface，之後可離線使用。
+sentence-transformers>=2.7.0
