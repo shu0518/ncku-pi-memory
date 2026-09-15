@@ -3,7 +3,7 @@
 > Adds persistent, cross-session memory to the [Pi coding agent](https://github.com/earendil-works/pi): captures observations from a session to disk, then retrieves and re-injects the most relevant ones into context at the start of the next session — entirely on local models, no cloud API calls.
 
 `Course project` · Netdb Lab, NCKU · AIASE 2026 · Individual
-**Stack:** Python (standard library core) · BM25 (from scratch) · sentence-transformers (optional hybrid) · TypeScript bridge (provided, unmodified)
+**Stack:** Python >= 3.10 (developed on 3.14.3, standard library core) · BM25 (from scratch) · sentence-transformers (optional hybrid) · TypeScript bridge (provided, unmodified) · pytest 9.0.3
 
 ## Overview
 
@@ -59,3 +59,6 @@ PYTHONPATH=. python -m memory.cli inject --query "run tests" --budget 2000
     pi-bridge/extension.ts   TypeScript bridge (provided, unmodified)
     benchmark/            corpus.jsonl / queries.jsonl (+ _large variants), run_benchmark.py
     tests/test_memory.py  Public unit tests
+
+---
+Original course-assignment README (in Chinese, incl. full environment/parameter tables): [docs/course-requirements.md](docs/course-requirements.md)
